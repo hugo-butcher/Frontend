@@ -1,0 +1,147 @@
+import tkinter as tk
+import pickle
+import tkinter.messagebox
+from tkinter import messagebox
+
+from selenium import webdriver
+import time
+from pynput.keyboard import Key, Controller
+keyboard = Controller()
+
+
+# gui start
+root = tk.Tk()
+
+# title and logo
+root.title("Nike Bot")
+root.iconbitmap(r'logo.ico')
+
+# canvas
+canvas = tk.Canvas(root, height='500', width='650')
+canvas.pack()
+
+# frame for background nike image
+background_image = tk.PhotoImage(file='abc.png')
+background_label = tk.Label(root, image=background_image)
+background_label.place(x=.2, y=.2, relwidth=1, relheight=1)
+
+# shortbot logo
+ign = tk.Label(root, text='Shortbot', font=("viga", 30), bg='#b00817', fg='white')
+ign.place(relx='.25', rely='-.05', relwidth='.5', relheight='.2')
+
+# gray frame
+frame = tk.Frame(root, bg='#aab6bb')
+frame.place(relheight='.8', relwidth='.8', relx='.1', rely='.1')
+
+#frame for shipping and billing
+billing = tk.Frame(frame, bg='#94999d')
+billing.place(relheight='.5', relwidth='1', relx='0', rely='0')
+
+#frame for link and shoe size
+shoe = tk.Frame(frame, bg='#94999d')
+shoe.place(relheight='.5', relwidth='1', relx='0', rely='.5')
+
+
+
+# all entries for credit card
+
+# label for cc number
+ccnumber = tk.Label(billing, font=("monaco", 11), text='Credit Card Number', bg='#94999d')
+ccnumber.place(relx='.1', rely='.1', relheight='.1', relwidth='.31')
+
+# card number entry
+credit_number = tk.Entry(billing, bg='white')
+credit_number.place(relx='.1', rely='.2', relheight='.1', relwidth='.3')
+
+# label for expiration date
+exp = tk.Label(billing, font=("monaco", 11), text='Expiration Date', bg='#94999d')
+exp.place(relx='.1', rely='.35', relheight='.1', relwidth='.259')
+
+# entry for expiration date
+expentry = tk.Entry(billing, bg='white')
+expentry.place(relx='.1', rely='.45', relheight='.1', relwidth='.05')
+
+explabel = tk.Label(billing, font=("monaco", 11), text='/', bg='#94999d')
+explabel.place(relx='.155', rely='.45', relheight='.1', relwidth='.02')
+
+expentry1 = tk.Entry(billing, bg='white')
+expentry1.place(relx='.18', rely='.45', relheight='.1', relwidth='.05')
+
+# label for cvc
+cvclbl = tk.Label(billing, font=("monaco", 11), text='CVC', bg='#94999d')
+cvclbl.place(relx='.1', rely='.6', relheight='.1', relwidth='.05')
+
+# entry for cvc
+cvcentry = tk.Entry(billing, bg='white')
+cvcentry.place(relx='.1', rely='.7', relheight='.1', relwidth='.05')
+
+# label for address
+addresslbl = tk.Label(billing, font=("monaco", 11), text='Address', bg='#94999d')
+addresslbl.place(relx='.5', rely='.1', relheight='.1', relwidth='.12')
+
+# entry for address
+addressentry = tk.Entry(billing, bg='white')
+addressentry.place(relx='.5', rely='.2', relheight='.1', relwidth='.3')
+
+# label for zip code
+ziplbl = tk.Label(billing, font=("monaco", 11), text='Zip', bg='#94999d')
+ziplbl.place(relx='.5', rely='.35', relheight='.1', relwidth='.05')
+
+# entry for zip
+zipent = tk.Entry(billing, bg='white')
+zipent.place(relx='.5', rely='.45', relheight='.1', relwidth='.1')
+
+# Label for city
+citylbl = tk.Label(billing, font=("monaco", 11), text='City', bg='#94999d')
+citylbl.place(relx='.65', rely='.35', relheight='.1', relwidth='.066')
+
+# Entry for city
+cityent = tk.Entry(billing, bg='white')
+cityent.place(relx='.65', rely='.45', relheight='.1', relwidth='.2')
+
+# Label for first name
+firstlbl = tk.Label(billing, font=("monaco", 11), text='First Name', bg='#94999d')
+firstlbl.place(relx='.5', rely='.6', relheight='.1', relwidth='.17')
+
+# Entry for first name
+firstent = tk.Entry(billing, bg='white')
+firstent.place(relx='.5', rely='.7', relheight='.1', relwidth='.1')
+
+# label for last name
+lastlbl = tk.Label(billing, font=("monaco", 11), text='Last Name', bg='#94999d')
+lastlbl.place(relx='.73', rely='.6', relheight='.1', relwidth='.15')
+
+# Entry for last name
+lastent = tk.Entry(billing, bg='white')
+lastent.place(relx='.73', rely='.7', relheight='.1', relwidth='.1')
+
+
+# ALL ENTRIES FOR LINK/SIZE
+
+# label for link
+linklbl = tk.Label(shoe, font=("monaco", 11), text='Link To Shoe Page', bg='#94999d')
+linklbl.place(relx='.1', rely='.1', relheight='.1', relwidth='.29')
+
+# entry for link
+linkent = tk.Entry(shoe, bg='white')
+linkent.place(relx='.1', rely='.2', relheight='.1', relwidth='.7')
+
+# label for shoe size
+sizelbl = tk.Label(shoe, font=("monaco", 11), text='Shoe Size', bg='#94999d')
+sizelbl.place(relx='.1', rely='.35', relheight='.1', relwidth='.15')
+
+# entry for shoe size
+sizeent = tk.Entry(shoe, bg='white')
+sizeent.place(relx='.1', rely='.45', relheight='.1', relwidth='.05')
+
+# START TASK BUTTON
+
+background_image1 = tk.PhotoImage(file='red2.png')
+background_label1 = tk.Button(root, image=background_image1, border='0', command=lambda:  messagebox.showinfo("cloud.google.com", "Connecting"))
+background_label1.place(relheight='.107', relwidth='.18', relx='.4', rely='.845')
+
+root.resizable(False, False)
+
+# GUI end
+root.mainloop()
+
