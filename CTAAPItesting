@@ -1,0 +1,343 @@
+import tkinter as tk
+import pickle
+import tkinter.messagebox
+from tkinter import messagebox
+import requests
+import json
+
+from selenium import webdriver
+import time
+from pynput.keyboard import Key, Controller
+keyboard = Controller()
+stationid = 'hello'
+# key http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=90c6b77ddee54efb8f9d00ad57b5e714&mapid=40380&outputType=JSON
+url = "http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=90c6b77ddee54efb8f9d00ad57b5e714&mapid=40380&outputType=JSON"
+r = requests.get(url)
+
+r_dict = r.json()
+
+print(len(r_dict['ctatt']['eta']))
+
+# print(r_dict['ctatt']['eta'][0]['rt'])
+if (r_dict['ctatt']['eta'][1]['rt']) == 'G':
+    print('Green')
+elif (r_dict['ctatt']['eta'][1]['rt']) == 'Org':
+    print('Orange')
+elif (r_dict['ctatt']['eta'][1]['rt']) == 'Pink':
+    print('Pink')
+elif (r_dict['ctatt']['eta'][1]['rt']) == 'Brn':
+    print('Brown')
+elif (r_dict['ctatt']['eta'][1]['rt']) == 'P':
+    print('Purple')
+else:
+    print(r_dict['ctatt']['eta'][1]['rt'])
+print(r_dict['ctatt']['eta'][1]['staNm'])
+
+if (r_dict['ctatt']['eta'][2]['rt']) == 'G':
+    print('Green')
+elif (r_dict['ctatt']['eta'][2]['rt']) == 'Org':
+    print('Orange')
+elif (r_dict['ctatt']['eta'][2]['rt']) == 'Pink':
+    print('Pink')
+elif (r_dict['ctatt']['eta'][2]['rt']) == 'Brn':
+    print('Brown')
+elif (r_dict['ctatt']['eta'][2]['rt']) == 'P':
+    print('Purple')
+else:
+    print(r_dict['ctatt']['eta'][2]['rt'])
+print(r_dict['ctatt']['eta'][2]['staNm'])
+
+if (r_dict['ctatt']['eta'][3]['rt']) == 'G':
+    print('Green')
+elif (r_dict['ctatt']['eta'][3]['rt']) == 'Org':
+    print('Orange')
+elif (r_dict['ctatt']['eta'][3]['rt']) == 'Pink':
+    print('Pink')
+elif (r_dict['ctatt']['eta'][3]['rt']) == 'Brn':
+    print('Brown')
+elif (r_dict['ctatt']['eta'][3]['rt']) == 'P':
+    print('Purple')
+else:
+    print(r_dict['ctatt']['eta'][3]['rt'])
+print(r_dict['ctatt']['eta'][3]['staNm'])
+
+if (r_dict['ctatt']['eta'][4]['rt']) == 'G':
+    print('Green')
+elif (r_dict['ctatt']['eta'][4]['rt']) == 'Org':
+    print('Orange')
+elif (r_dict['ctatt']['eta'][4]['rt']) == 'Pink':
+    print('Pink')
+elif (r_dict['ctatt']['eta'][4]['rt']) == 'Brn':
+    print('Brown')
+elif (r_dict['ctatt']['eta'][4]['rt']) == 'P':
+    print('Purple')
+else:
+    print(r_dict['ctatt']['eta'][4]['rt'])
+print(r_dict['ctatt']['eta'][4]['staNm'])
+
+# 5
+if (r_dict['ctatt']['eta'][5]['rt']) == 'G':
+    print('Green')
+elif (r_dict['ctatt']['eta'][5]['rt']) == 'Org':
+    print('Orange')
+elif (r_dict['ctatt']['eta'][5]['rt']) == 'Pink':
+    print('Pink')
+elif (r_dict['ctatt']['eta'][5]['rt']) == 'Brn':
+    print('Brown')
+elif (r_dict['ctatt']['eta'][5]['rt']) == 'P':
+    print('Purple')
+else:
+    print(r_dict['ctatt']['eta'][5]['rt'])
+print(r_dict['ctatt']['eta'][5]['staNm'])
+
+if len(r_dict['ctatt']['eta']) > 6:
+    if (r_dict['ctatt']['eta'][6]['rt']) == 'G':
+        print('Green')
+    elif (r_dict['ctatt']['eta'][6]['rt']) == 'Org':
+        print('Orange')
+    elif (r_dict['ctatt']['eta'][6]['rt']) == 'Pink':
+        print('Pink')
+    elif (r_dict['ctatt']['eta'][6]['rt']) == 'Brn':
+        print('Brown')
+    elif (r_dict['ctatt']['eta'][6]['rt']) == 'P':
+        print('Purple')
+    else:
+        print(r_dict['ctatt']['eta'][6]['rt'])
+    print(r_dict['ctatt']['eta'][6]['staNm'])
+
+if len(r_dict['ctatt']['eta']) > 7:
+    if (r_dict['ctatt']['eta'][7]['rt']) == 'G':
+        print('Green')
+    elif (r_dict['ctatt']['eta'][7]['rt']) == 'Org':
+        print('Orange')
+    elif (r_dict['ctatt']['eta'][7]['rt']) == 'Pink':
+        print('Pink')
+    elif (r_dict['ctatt']['eta'][7]['rt']) == 'Brn':
+        print('Brown')
+    elif (r_dict['ctatt']['eta'][7]['rt']) == 'P':
+        print('Purple')
+    else:
+        print(r_dict['ctatt']['eta'][7]['rt'])
+    print(r_dict['ctatt']['eta'][7]['staNm'])
+
+if len(r_dict['ctatt']['eta']) > 8:
+    if (r_dict['ctatt']['eta'][8]['rt']) == 'G':
+        print('Green')
+    elif (r_dict['ctatt']['eta'][8]['rt']) == 'Org':
+        print('Orange')
+    elif (r_dict['ctatt']['eta'][8]['rt']) == 'Pink':
+        print('Pink')
+    elif (r_dict['ctatt']['eta'][8]['rt']) == 'Brn':
+        print('Brown')
+    elif (r_dict['ctatt']['eta'][8]['rt']) == 'P':
+        print('Purple')
+    else:
+        print(r_dict['ctatt']['eta'][8]['rt'])
+    print(r_dict['ctatt']['eta'][8]['staNm'])
+
+if len(r_dict['ctatt']['eta']) > 9:
+    if (r_dict['ctatt']['eta'][9]['rt']) == 'G':
+        print('Green')
+    elif (r_dict['ctatt']['eta'][9]['rt']) == 'Org':
+        print('Orange')
+    elif (r_dict['ctatt']['eta'][9]['rt']) == 'Pink':
+        print('Pink')
+    elif (r_dict['ctatt']['eta'][9]['rt']) == 'Brn':
+        print('Brown')
+    elif (r_dict['ctatt']['eta'][9]['rt']) == 'P':
+        print('Purple')
+    else:
+        print(r_dict['ctatt']['eta'][9]['rt'])
+    print(r_dict['ctatt']['eta'][9]['staNm'])
+
+if len(r_dict['ctatt']['eta']) > 10:
+    if (r_dict['ctatt']['eta'][10]['rt']) == 'G':
+        print('Green')
+    elif (r_dict['ctatt']['eta'][10]['rt']) == 'Org':
+        print('Orange')
+    elif (r_dict['ctatt']['eta'][10]['rt']) == 'Pink':
+        print('Pink')
+    elif (r_dict['ctatt']['eta'][10]['rt']) == 'Brn':
+        print('Brown')
+    elif (r_dict['ctatt']['eta'][10]['rt']) == 'P':
+        print('Purple')
+    else:
+        print(r_dict['ctatt']['eta'][10]['rt'])
+    print(r_dict['ctatt']['eta'][10]['staNm'])
+
+if len(r_dict['ctatt']['eta']) > 11:
+    if (r_dict['ctatt']['eta'][11]['rt']) == 'G':
+        print('Green')
+    elif (r_dict['ctatt']['eta'][11]['rt']) == 'Org':
+        print('Orange')
+    elif (r_dict['ctatt']['eta'][11]['rt']) == 'Pink':
+        print('Pink')
+    elif (r_dict['ctatt']['eta'][11]['rt']) == 'Brn':
+        print('Brown')
+    elif (r_dict['ctatt']['eta'][11]['rt']) == 'P':
+        print('Purple')
+    else:
+        print(r_dict['ctatt']['eta'][11]['rt'])
+    print(r_dict['ctatt']['eta'][11]['staNm'])
+
+if len(r_dict['ctatt']['eta']) > 12:
+    if (r_dict['ctatt']['eta'][12]['rt']) == 'G':
+        print('Green')
+    elif (r_dict['ctatt']['eta'][12]['rt']) == 'Org':
+        print('Orange')
+    elif (r_dict['ctatt']['eta'][12]['rt']) == 'Pink':
+        print('Pink')
+    elif (r_dict['ctatt']['eta'][12]['rt']) == 'Brn':
+        print('Brown')
+    elif (r_dict['ctatt']['eta'][12]['rt']) == 'P':
+        print('Purple')
+    else:
+        print(r_dict['ctatt']['eta'][12]['rt'])
+    print(r_dict['ctatt']['eta'][12]['staNm'])
+
+if len(r_dict['ctatt']['eta']) > 13:
+    if (r_dict['ctatt']['eta'][13]['rt']) == 'G':
+        print('Green')
+    elif (r_dict['ctatt']['eta'][13]['rt']) == 'Org':
+        print('Orange')
+    elif (r_dict['ctatt']['eta'][13]['rt']) == 'Pink':
+        print('Pink')
+    elif (r_dict['ctatt']['eta'][13]['rt']) == 'Brn':
+        print('Brown')
+    elif (r_dict['ctatt']['eta'][13]['rt']) == 'P':
+        print('Purple')
+    else:
+        print(r_dict['ctatt']['eta'][13]['rt'])
+    print(r_dict['ctatt']['eta'][13]['staNm'])
+
+if len(r_dict['ctatt']['eta']) > 14:
+    if (r_dict['ctatt']['eta'][14]['rt']) == 'G':
+        print('Green')
+    elif (r_dict['ctatt']['eta'][14]['rt']) == 'Org':
+        print('Orange')
+    elif (r_dict['ctatt']['eta'][14]['rt']) == 'Pink':
+        print('Pink')
+    elif (r_dict['ctatt']['eta'][14]['rt']) == 'Brn':
+        print('Brown')
+    elif (r_dict['ctatt']['eta'][14]['rt']) == 'P':
+        print('Purple')
+    else:
+        print(r_dict['ctatt']['eta'][14]['rt'])
+    print(r_dict['ctatt']['eta'][14]['staNm'])
+
+if len(r_dict['ctatt']['eta']) > 15:
+    if (r_dict['ctatt']['eta'][15]['rt']) == 'G':
+        print('Green')
+    elif (r_dict['ctatt']['eta'][15]['rt']) == 'Org':
+        print('Orange')
+    elif (r_dict['ctatt']['eta'][15]['rt']) == 'Pink':
+        print('Pink')
+    elif (r_dict['ctatt']['eta'][15]['rt']) == 'Brn':
+        print('Brown')
+    elif (r_dict['ctatt']['eta'][15]['rt']) == 'P':
+        print('Purple')
+    else:
+        print(r_dict['ctatt']['eta'][15]['rt'])
+    print(r_dict['ctatt']['eta'][15]['staNm'])
+
+if len(r_dict['ctatt']['eta']) > 16:
+    if (r_dict['ctatt']['eta'][16]['rt']) == 'G':
+        print('Green')
+    elif (r_dict['ctatt']['eta'][16]['rt']) == 'Org':
+        print('Orange')
+    elif (r_dict['ctatt']['eta'][16]['rt']) == 'Pink':
+        print('Pink')
+    elif (r_dict['ctatt']['eta'][16]['rt']) == 'Brn':
+        print('Brown')
+    elif (r_dict['ctatt']['eta'][16]['rt']) == 'P':
+        print('Purple')
+    else:
+        print(r_dict['ctatt']['eta'][16]['rt'])
+    print(r_dict['ctatt']['eta'][16]['staNm'])
+
+
+if len(r_dict['ctatt']['eta']) > 17:
+    if (r_dict['ctatt']['eta'][17]['rt']) == 'G':
+        print('Green')
+    elif (r_dict['ctatt']['eta'][17]['rt']) == 'Org':
+        print('Orange')
+    elif (r_dict['ctatt']['eta'][17]['rt']) == 'Pink':
+        print('Pink')
+    elif (r_dict['ctatt']['eta'][17]['rt']) == 'Brn':
+        print('Brown')
+    elif (r_dict['ctatt']['eta'][17]['rt']) == 'P':
+        print('Purple')
+    else:
+        print(r_dict['ctatt']['eta'][17]['rt'])
+    print(r_dict['ctatt']['eta'][17]['staNm'])
+
+
+if len(r_dict['ctatt']['eta']) > 18:
+    if (r_dict['ctatt']['eta'][18]['rt']) == 'G':
+        print('Green')
+    elif (r_dict['ctatt']['eta'][18]['rt']) == 'Org':
+        print('Orange')
+    elif (r_dict['ctatt']['eta'][18]['rt']) == 'Pink':
+        print('Pink')
+    elif (r_dict['ctatt']['eta'][18]['rt']) == 'Brn':
+        print('Brown')
+    elif (r_dict['ctatt']['eta'][18]['rt']) == 'P':
+        print('Purple')
+    else:
+        print(r_dict['ctatt']['eta'][18]['rt'])
+    print(r_dict['ctatt']['eta'][18]['staNm'])
+
+if len(r_dict['ctatt']['eta']) > 19:
+    if (r_dict['ctatt']['eta'][19]['rt']) == 'G':
+        print('Green')
+    elif (r_dict['ctatt']['eta'][19]['rt']) == 'Org':
+        print('Orange')
+    elif (r_dict['ctatt']['eta'][19]['rt']) == 'Pink':
+        print('Pink')
+    elif (r_dict['ctatt']['eta'][19]['rt']) == 'Brn':
+        print('Brown')
+    elif (r_dict['ctatt']['eta'][19]['rt']) == 'P':
+        print('Purple')
+    else:
+        print(r_dict['ctatt']['eta'][19]['rt'])
+    print(r_dict['ctatt']['eta'][19]['staNm'])
+
+# Gui start
+root = tk.Tk()
+
+# canvas
+canvas = tk.Canvas(root, height='700', width='450')
+canvas.pack()
+
+# declare variable for label
+
+
+
+# label for display
+label1 = tk.Label(canvas, text='', bg='green')
+label1.place(relheight='.2', relwidth='.5', relx='.5', rely='.1')
+
+def display():
+    label1.config(text=my_listbox.get(tk.ANCHOR))
+
+my_listbox = tk.Listbox(root)
+my_listbox.place(relwidth='.2',relheight='.3', relx='.4', rely='.2')
+
+# button to display the list box thing chosen
+button = tk.Button(canvas, text='display choice', command = display())
+button.place(relheight='.2', relwidth='.5', relx='.5', rely='.7')
+
+
+# add item to listbox
+my_listbox.insert([0], "1")
+my_listbox.insert([1], "2")
+my_listbox.insert([2], "3")
+
+train1lbl = tk.Label
+
+
+
+
+
+# GUI end
+root.mainloop()
