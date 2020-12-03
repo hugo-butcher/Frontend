@@ -1,0 +1,404 @@
+
+# IMPORTS
+
+
+
+from pynput import keyboard
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+import tkinter as tk
+from tkinter import *
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
+from pynput.keyboard import Key, Controller
+PATH = "C:\Program Files (x86)\chromedriver.exe"
+keyboard = Controller()
+
+
+
+
+
+
+
+# DEFINITIONS
+
+
+def cock(url, user1, pass1, user2, pass2, user3, pass3, user4, pass4):
+    driver = webdriver.Chrome(PATH)
+    driver.get(url)
+    task1stat.config(text='logging in...', bg='orange')
+    menuclick = driver.find_element_by_xpath('/html/body/div[1]/div[3]/header/div/div[1]/div[3]/button')
+    menuclick.click()
+    time.sleep(.25)
+    menuclick = driver.find_element_by_xpath(
+        '/html/body/div[1]/div[3]/header/div/div[1]/div[2]/nav/div[1]/div[1]/div/div[2]/div/button/span')
+    menuclick.click()
+    time.sleep(.25)
+    # click on username
+    menuclick = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[1]/div/div[6]/form/div[2]/input')
+    menuclick.click()
+    # type in username
+    keyboard.type(user1)
+    time.sleep(.25)
+    # click on password
+    menuclick = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[1]/div/div[6]/form/div[3]/input')
+    menuclick.click()
+    time.sleep(.25)
+    # type in password
+    keyboard.type(pass1)
+    # click login
+    menuclick = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[1]/div/div[6]/form/div[6]/input')
+    menuclick.click()
+    task1stat.config(text='Logged In', bg='green')
+    time.sleep(5)
+    secondone(url, user1, pass1, user2, pass2, user3, pass3, user4, pass4)
+
+def secondone(url, user1, pass1, user2, pass2, user3, pass3, user4, pass4):
+    driver = webdriver.Chrome(PATH)
+    driver.get(url)
+    # second one
+    task2stat.config(text='logging in...', bg='orange')
+    menuclick1 = driver.find_element_by_xpath('/html/body/div[1]/div[3]/header/div/div[1]/div[3]/button')
+    menuclick1.click()
+    time.sleep(.25)
+    menuclick1 = driver.find_element_by_xpath(
+        '/html/body/div[1]/div[3]/header/div/div[1]/div[2]/nav/div[1]/div[1]/div/div[2]/div/button/span')
+    menuclick1.click()
+    time.sleep(.25)
+    # click on username
+    menuclick1 = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[1]/div/div[6]/form/div[2]/input')
+    menuclick1.click()
+    # type in username
+    keyboard.type(user2)
+    time.sleep(.25)
+    # click on password
+    menuclick1 = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[1]/div/div[6]/form/div[3]/input')
+    menuclick1.click()
+    time.sleep(.25)
+    # type in password
+    keyboard.type(pass2)
+    # click login
+    menuclick1 = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[1]/div/div[6]/form/div[6]/input')
+    menuclick1.click()
+    task2stat.config(text='logged in', bg='green')
+    time.sleep(5)
+    thirdone(url, user1, pass1, user2, pass2)
+
+def thirdone(url, user3, pass3, user4, pass4):
+    driver = webdriver.Chrome(PATH)
+    driver.get(url)
+    # second one
+    task3stat.config(text='logging in...', bg='orange')
+    menuclick2 = driver.find_element_by_xpath('/html/body/div[1]/div[3]/header/div/div[1]/div[3]/button')
+    menuclick2.click()
+    time.sleep(.25)
+    menuclick2 = driver.find_element_by_xpath(
+        '/html/body/div[1]/div[3]/header/div/div[1]/div[2]/nav/div[1]/div[1]/div/div[2]/div/button/span')
+    menuclick2.click()
+    time.sleep(.25)
+    # click on username
+    menuclick2 = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[1]/div/div[6]/form/div[2]/input')
+    menuclick2.click()
+    # type in username
+    keyboard.type(user3)
+    time.sleep(.25)
+    # click on password
+    menuclick2 = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[1]/div/div[6]/form/div[3]/input')
+    menuclick2.click()
+    time.sleep(.25)
+    # type in password
+    keyboard.type(pass3)
+    # click login
+    menuclick2 = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[1]/div/div[6]/form/div[6]/input')
+    menuclick2.click()
+    task3stat.config(text='logged in', bg='green')
+    time.sleep(5)
+    fourthone(url, user4, pass4)
+
+
+def fourthone(url, user4, pass4):
+    driver = webdriver.Chrome(PATH)
+    driver.get(url)
+    # second one
+    task4stat.config(text='logging in...', bg='orange')
+    menuclick2 = driver.find_element_by_xpath('/html/body/div[1]/div[3]/header/div/div[1]/div[3]/button')
+    menuclick2.click()
+    time.sleep(.25)
+    menuclick2 = driver.find_element_by_xpath(
+        '/html/body/div[1]/div[3]/header/div/div[1]/div[2]/nav/div[1]/div[1]/div/div[2]/div/button/span')
+    menuclick2.click()
+    time.sleep(.25)
+    # click on username
+    menuclick2 = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[1]/div/div[6]/form/div[2]/input')
+    menuclick2.click()
+    # type in username
+    keyboard.type(user4)
+    time.sleep(.25)
+    # click on password
+    menuclick2 = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[1]/div/div[6]/form/div[3]/input')
+    menuclick2.click()
+    time.sleep(.25)
+    # type in password
+    keyboard.type(pass4)
+    # click login
+    menuclick2 = driver.find_element_by_xpath('/html/body/div[1]/div[1]/div/div[1]/div/div[6]/form/div[6]/input')
+    menuclick2.click()
+    task4stat.config(text='logged in', bg='green')
+# save tasks
+
+def saveTask(user1, pass1, name):
+    with open('file.txt', 'r') as myFile:
+        firstline = str((myFile.readlines(1)))
+        secondline = str((myFile.readlines(4)))
+        thirdline = str((myFile.readlines(7)))
+        fourthline = str((myFile.readlines(10)))
+    stat1 = firstline
+    stat2 = secondline
+    stat3 = thirdline
+    stat4 = fourthline
+    print(stat1)
+    print(stat2)
+    print(stat3)
+    print(stat4)
+    count = 0
+    taskcount = 0
+    if name != '':
+        with open('file.txt', 'a') as myFile:
+            myFile.write(name)
+            myFile.write('\n')
+            myFile.write(user1)
+            myFile.write('\n')
+            myFile.write(pass1)
+            myFile.write('\n')
+    for line in open('file.txt'):
+        count += 1
+    print(count)
+    if count == 3:
+        taskcount = 1
+    elif count == 6:
+        taskcount = 2
+    elif count == 9:
+        taskcount = 3
+    elif count == 12:
+        taskcount = 4
+    print(taskcount)
+    if taskcount == 1:
+        task1stat.config(text=stat1)
+    elif taskcount == 2:
+        task1stat.config(text=stat1)
+        task2stat.config(text=stat2)
+    elif taskcount == 3:
+        task1stat.config(text=stat1)
+        task2stat.config(text=stat2)
+        task3stat.config(text=stat3)
+    elif taskcount == 4:
+        task1stat.config(text=stat1)
+        task2stat.config(text=stat2)
+        task3stat.config(text=stat3)
+        task4stat.config(text=stat4)
+
+def reset():
+    file = open("file.txt", "r+")
+    file.truncate(0)
+    file.close()
+
+
+
+
+# example of closing popup
+# WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "/html/body/div[1]/div[3]/header/div/div[1]/div[3]/button/svg"))).click()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# GUI
+
+
+
+
+root = tk.Tk()
+root.title('tempbot')
+base = tk.Canvas(root, height='400', width='800', bg='#13131c')
+base.pack()
+
+# canvas for accounts
+canvas = tk.Canvas(base, height='400', width='300', bg='#373943')
+canvas.place(relx='0')
+# canvas for user and pass
+canvas2 = tk.Canvas(base, height='400', width='300', bg='#373943')
+canvas2.place(relx='.37')
+
+# canvas for tasks
+canvas1 = tk.Canvas(base, height='400', width='200', bg='#373943')
+canvas1.place(relx='.745')
+
+# logo
+#logo = tk.PhotoImage(file='titan.png')
+logolbl = tk.Label(canvas2,font=("montserrat", 22, "bold"), text='TITAN', bg='#373943', fg='white')
+logolbl.place(relx='.35', rely='.05', relheight='.14925', relwidth='.272')
+
+
+# WIDGETS IN SECTION 2
+
+# label for url
+urllbl = tk.Label(canvas2, font=("montserrat", 13, "bold"), text = 'URL', bg='#373943', fg='#ffffff')
+urllbl.place(relx='.15', rely='.3', relheight='.05', relwidth='.7')
+
+# entry for url
+urlent = tk.Entry(canvas2, bg='#cb8f00', fg='white', font=("montserrat", 9, "bold"))
+urlent.place(relx='.15', rely='.35', relheight='.05', relwidth='.7')
+
+# label for xpath
+pathlbl = tk.Label(canvas2, font=("montserrat", 13, "bold"), text = 'XPATH', bg='#373943', fg='#ffffff')
+pathlbl.place(relx='.15', rely='.5', relheight='.05', relwidth='.7')
+
+# entry for xpath
+pathent = tk.Entry(canvas2, bg='#cb8f00', fg='white', font=("montserrat", 9, "bold"))
+pathent.place(relx='.15', rely='.55', relheight='.05', relwidth='.7')
+
+
+# WIDGETS IN SEC 3
+
+# task label
+tasklbl = tk.Label(canvas1, font=("montserrat", 17, "bold"), text = 'Tasks', bg='#373943', fg='#ffffff' )
+tasklbl.place(relx='.34', rely='.1')
+
+
+# task 1 name
+task1 = tk.Label(canvas1, font=("montserrat", 12, "bold"), text = '1', bg='#cb8f00', fg='#ffffff')
+task1.place(relx='.15', rely='.25', relwidth='.1')
+
+# task 1 status
+task1stat = tk.Label(canvas1, font=("montserrat", 12, "bold"), text = 'waiting', bg='#cb8f00', fg='#ffffff')
+task1stat.place(relx='.3', rely='.25', relwidth='.6')
+
+# task 2 name
+task2 = tk.Label(canvas1, font=("montserrat", 12, "bold"), text = '2', bg='#cb8f00', fg='#ffffff')
+task2.place(relx='.15', rely='.35', relwidth='.1')
+
+# task 2 status
+task2stat = tk.Label(canvas1, font=("montserrat", 12, "bold"), text = 'Waiting', bg='#cb8f00', fg='#ffffff')
+task2stat.place(relx='.3', rely='.35', relwidth='.6')
+
+# task 3 name
+task3 = tk.Label(canvas1, font=("montserrat", 12, "bold"), text = '3', bg='#cb8f00', fg='#ffffff')
+task3.place(relx='.15', rely='.45', relwidth='.1')
+
+# task 3 status
+task3stat = tk.Label(canvas1, font=("montserrat", 12, "bold"), text = 'Waiting', bg='#cb8f00', fg='#ffffff')
+task3stat.place(relx='.3', rely='.45', relwidth='.6')
+
+# task 4 name
+task4 = tk.Label(canvas1, font=("montserrat", 12, "bold"), text = '4', bg='#cb8f00', fg='#ffffff')
+task4.place(relx='.15', rely='.55', relwidth='.1')
+
+# task 4 status
+task4stat = tk.Label(canvas1, font=("montserrat", 12, "bold"), text = 'Waiting', bg='#cb8f00', fg='#ffffff')
+task4stat.place(relx='.3', rely='.55', relwidth='.6')
+
+
+
+
+# WIDGETS IN SEC 1
+
+# account label
+accountlbl = tk.Label(canvas, font=("montserrat", 17, "bold"), text = 'Account Info', bg='#373943', fg='#ffffff' )
+accountlbl.place(relx='.25', rely='.05')
+
+# label for user1
+urllbl = tk.Label(canvas, font=("montserrat", 9, "bold"), text = 'USER', bg='#373943', fg='#ffffff')
+urllbl.place(relx='.15', rely='.4', relheight='.05', relwidth='.7')
+
+# entry user 1
+user1ent = tk.Entry(canvas, bg='#cb8f00', fg='white', font=("montserrat", 9, "bold"))
+user1ent.place(relx='.15', rely='.45', relheight='.05', relwidth='.7')
+
+# label for pass 1
+urllbl = tk.Label(canvas, font=("montserrat", 9, "bold"), text = 'PASS', bg='#373943', fg='#ffffff')
+urllbl.place(relx='.15', rely='.5', relheight='.05', relwidth='.7')
+
+# entry for pass 1
+pass1ent = tk.Entry(canvas, show='*', bg='#cb8f00', fg='white', font=("montserrat", 9, "bold"))
+pass1ent.place(relx='.15', rely='.55', relheight='.05', relwidth='.7')
+
+# label for Name
+namelbl = tk.Label(canvas, font=("montserrat", 9, "bold"), text = 'NAME', bg='#373943', fg='#ffffff')
+namelbl.place(relx='.15', rely='.2', relheight='.05', relwidth='.7')
+
+# entry for Name
+nameent = tk.Entry(canvas, bg='#cb8f00', fg='white', font=("montserrat", 9, "bold"))
+nameent.place(relx='.15', rely='.25', relheight='.05', relwidth='.7')
+
+# label for pass 2
+urllbl = tk.Label(canvas, font=("montserrat", 9, "bold"), text = 'PASS 2', bg='#373943', fg='#ffffff')
+#urllbl.place(relx='.15', rely='.45', relheight='.05', relwidth='.7')
+
+# entry for pass 2
+pass2ent = tk.Entry(canvas, show='*', bg='#cb8f00', fg='white', font=("montserrat", 9, "bold"))
+#pass2ent.place(relx='.15', rely='.5', relheight='.05', relwidth='.7')
+
+# label for user 3
+urllbl3 = tk.Label(canvas, font=("montserrat", 9, "bold"), text = 'USER 3', bg='#373943', fg='#ffffff')
+#urllbl3.(relx='.15', rely='.55', relheight='.05', relwidth='.7')
+
+# entry for user 3
+userent3 = tk.Entry(canvas, bg='#cb8f00', fg='white', font=("montserrat", 9, "bold"))
+#userent3.(relx='.15', rely='.6', relheight='.05', relwidth='.7')
+
+# label for pass 3
+urllbl3 = tk.Label(canvas, font=("montserrat", 9, "bold"), text = 'PASS 3', bg='#373943', fg='#ffffff')
+#urllbl3.(relx='.15', rely='.65', relheight='.05', relwidth='.7')
+
+# entry for pass 3
+passent3 = tk.Entry(canvas, show='*', bg='#cb8f00', fg='white', font=("montserrat", 9, "bold"))
+#passent3.(relx='.15', rely='.7', relheight='.05', relwidth='.7')
+
+# label for user 4
+urllbl4 = tk.Label(canvas, font=("montserrat", 9, "bold"), text = 'USER 4', bg='#373943', fg='#ffffff')
+#urllbl4.(relx='.15', rely='.75', relheight='.05', relwidth='.7')
+
+# entry for user 4
+userent4 = tk.Entry(canvas, bg='#cb8f00', fg='white', font=("montserrat", 9, "bold"))
+#userent4.(relx='.15', rely='.8', relheight='.05', relwidth='.7')
+
+# label for pass 4
+urllbl4 = tk.Label(canvas, font=("montserrat", 9, "bold"), text = 'PASS 4', bg='#373943', fg='#ffffff')
+#urllbl4.(relx='.15', rely='.85', relheight='.05', relwidth='.7')
+
+# entry for pass 4
+passent4 = tk.Entry(canvas, show='*', bg='#cb8f00', fg='white', font=("montserrat", 9, "bold"))
+#passent4.(relx='.15', rely='.9', relheight='.05', relwidth='.7')
+
+# button for save
+savebtn = tk.Button(canvas, text='save task', fg='white', bg='black', command = lambda: saveTask(user1ent.get(), pass1ent.get(), nameent.get()))
+savebtn.place(relx='.3', rely='.8', relwidth='.4', relheight='.1')
+
+# reset task button
+resetbtn = tk.Button(canvas, text='reset tasks', fg='white', bg='black', command = lambda: reset())
+resetbtn.place(relx='.4', rely='.93', relwidth='.2', relheight='.05')
+
+
+
+# BUTTON MUST BE AT THE BOTTOM FOR ENTRIES'
+
+# button
+button79 = tk.Button(canvas2, border='5', font=("montserrat", 13, "bold"), bg='#ffb300', text='Start Tasks', fg='#ffffff', command = lambda: cock(urlent.get(),user1ent.get(),pass1ent.get()))
+button79.place(relx='.1', rely='.7', relheight='.2', relwidth='.8')
+
+root.mainloop()
